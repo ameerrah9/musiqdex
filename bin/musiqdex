@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/environment'
+
+#TopRatedSongs::CLI.new.start
+
+#puts "Hello"
+
+TopRatedSongs::APIManager.start

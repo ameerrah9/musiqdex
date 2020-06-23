@@ -1,11 +1,12 @@
-# require "musiqdex/version"
-# require 'pry'
-# require 'httparty'
-# require 'rspotify'
+require 'pry'
+require 'json'
+require 'rest-client'
 
+require_relative "./musiqdex/version"
 
-# require_relative "./ApiManager"
+#require_relative "./CLI"
+require_relative "./APIManager"
 
-# module Musiqdex
-  
-# end
+module TopRatedSongs
+
+end

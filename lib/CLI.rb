@@ -1,25 +1,23 @@
-# class CLI
+
+
+# class TopRatedSongs::CLI
+
+    def start
+        puts "Welcome to the Musiqdex!"
+        menu
+    end
+
+    def menu
+        puts "What song would you like to search for?"
+
+        input = gets.strip
+
+        TopRatedSongs::APIManager.query_musiqdex(input)
+
+
+
+    end
     
-#     def display_musiqdex
-#         #shows all the users playlists
-#     end
-
-#     def remove_musiqdex
-#         #remove a track from playlist
-#     end
-
-#     def find_by_artist
-#         #locate a playlist that has this artist
-#     end
-
-#     def greeting
-#         puts "Welcome #{me.display_name}!"
-#     end
-
-#     def farewell
-#         puts "See you soon #{me.display_name}!"
-#     end
-
 #     def find_by_genre
 
 #     end
@@ -35,6 +33,27 @@
 #     def self.menu
 #         input = gets.chomp
 #     end
+
+def get_songs
+
+    #     end
+    
+    #     def get_artists
+    
+    #     end
+    
+    #     def get_albums
+    
+    #     end
+    
+    #     def get_song_year
+    
+    #     end
+    
+    #     def get_album_year
+    
+    #     end
+    
 
 #     def menu
 #         puts "Choose from the Following:"
