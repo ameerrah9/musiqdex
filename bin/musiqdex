@@ -2,8 +2,5 @@
 
 require_relative '../lib/environment'
 
-#TopRatedSongs::CLI.new.start
 
-#puts "Hello"
-
-TopRatedSongs::APIManager.start
+TopRatedSongs::CLI.new.start
