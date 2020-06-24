@@ -8,9 +8,9 @@ class TopRatedSongs::CLI
     def menu
         puts "What song would you like to search for?"
 
-        input = gets.strip
+        song_string = gets.strip
 
-        TopRatedSongs::APIManager.query_musiqdex(input)
+        TopRatedSongs::APIManager.query_musiqdex(song_string)
 
         TopRatedSongs::Songs.all.each.with_index(1) do |m, i|
             puts "#{i}. #{m.name}"
@@ -18,13 +18,14 @@ class TopRatedSongs::CLI
        
         puts "What song would you like information on?"
 
-        input = gets.strip
+        song_number = gets.strip.to_i
+        
 
-        song =  TopRatedSongs::Songs.all[input.to_i - 1]
+        song = song_number - 1
 
-        TopRatedSongs::APIManager.query_musiqdex(song)
+        song_object = TopRatedSongs::Songs.all[song]
 
-
+        TopRatedSongs::APIManager.single_musiqdex(song_string, song_object, song)
 
     end
 

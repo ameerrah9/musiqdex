@@ -16,22 +16,6 @@ class TopRatedSongs::Songs
     @@all   
   end
   
-  # def self.print_tracks
-  #   self.all.each.with_index(1) { |track, index|        
-  #   puts "#{index}. #{track.name}".colorize(:yellow)
-  #   }
-  # end
-  
-  # def self.print_track_details(index)
-  #   beer = self.find(index)
-  #     puts ""
-  #     puts "/--------------------------------------------------------/"
-  #     puts "| Track Name:".colorize(:yellow) + " #{track.name}"
-  #     puts "| Artist:".colorize(:yellow) + " #{track.artist}"
-  #     puts "| Playcount:".colorize(:yellow) + " #{track.playcount}"
-  #     puts "| Listeners:".colorize(:yellow) + " #{track.listeners}"
-  #     puts "/--------------------------------------------------------/"
-  #   end
-  
+
   
   end
