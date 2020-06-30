@@ -5,6 +5,7 @@ class TopRatedSongs::Songs
   attr_accessor :name, :artist, :listeners
   
   @@all = []
+
   def initialize(args)
     args.each do |k, v|
       self.send("#{k}=", v) if self.respond_to?(k)
@@ -15,7 +16,9 @@ class TopRatedSongs::Songs
   def self.all
     @@all   
   end
-  
 
-  
+  def self.delete
+    @@all.clear
   end
+  
+end

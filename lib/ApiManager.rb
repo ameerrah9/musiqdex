@@ -11,7 +11,9 @@ class TopRatedSongs::APIManager
 
         json["results"]["trackmatches"]["track"].each do |songs_hash|
             TopRatedSongs::Songs.new(songs_hash)
+            #binding.pry
         end
+
     end
     
     def self.single_musiqdex(track, song_object, num)
@@ -24,7 +26,7 @@ class TopRatedSongs::APIManager
         song_object.listeners = final_song["listeners"]
         song_object.name = final_song["name"]
 
-        puts "Song: #{song_object.name}"
+        puts "Song Title: #{song_object.name}"
         puts "Artist: #{song_object.artist}"
         puts "Number of Listeners: #{song_object.listeners}"
     end
