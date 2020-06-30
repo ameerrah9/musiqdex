@@ -3,4 +3,4 @@
 require_relative '../lib/environment'
 
 
-TopRatedSongs::CLI.new.start
+TopSongs::CLI.new.start
