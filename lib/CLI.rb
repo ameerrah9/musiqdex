@@ -13,28 +13,30 @@ class TopSongs::CLI
     def song_list(another=nil)
     puts <<-HEREDOC
         
-    "Please choose #{another}keyword you'd like to search for or type 'exit' to exit the program"
+    Please choose #{another}keyword you'd like to search for or type 'exit' to exit the program
 
     HEREDOC
         
         @song_string = gets.strip
         if @song_string == 'exit'
             puts <<-HEREDOC
-                "Bye!"
+
+                Bye!
+
             HEREDOC
+            exit
         else
 
 
         TopSongs::APIManager.query_musiqdex(@song_string)
-        @count ||= 0
-        @count += 1
+        
         TopSongs::Songs.all.each.with_index(1) do |m, i|
             puts "#{i}. #{m.name}"
         end
 
         puts <<-HEREDOC
 
-            "What song would you like information on?"
+            What song would you like information on?
 
         HEREDOC
 
@@ -48,12 +50,19 @@ class TopSongs::CLI
         @song_object = TopSongs::Songs.all[@song]
         song_info
         TopSongs::Songs.delete
-        song_list("another ") if @count < 2
+        song_list("another ")
         end
     end
 
     def song_info
         TopSongs::APIManager.single_musiqdex(@song_string, @song_object, @song)
+        puts <<-HEREDOC
+        Song Title: #{@song_object.name}
+        
+        Artist: #{@song_object.artist}
+        
+        Number of Listeners: #{@song_object.listeners}
+        HEREDOC
     end
 
 end
