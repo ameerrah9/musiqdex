@@ -13,7 +13,7 @@ class TopSongs::CLI
     def song_list(another=nil)
     puts <<-HEREDOC
         
-    Please choose #{another}keyword you'd like to search for or type 'exit' to exit the program
+    Please choose #{another} song title keyword you'd like to search for or type 'exit' to exit the program
 
     HEREDOC
         
